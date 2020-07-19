@@ -1,0 +1,5 @@
+# Neutrino build directory
+build
+
+# node dependencies
+node_modules/
