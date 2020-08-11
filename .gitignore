@@ -1,5 +1,15 @@
 # Neutrino build directory
 build
 
-# node dependencies
+# Node dependencies
 node_modules/
+
+# Flask dependencies
+flask/
+__pycache__/
+
+# VS code proj dir
+.vscode/
+
+# Tables
+tables/
