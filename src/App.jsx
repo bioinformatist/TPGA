@@ -3,6 +3,7 @@ import { Layout } from 'antd';
 import { hot } from 'react-hot-loader';
 import { HashRouter } from 'react-router-dom';
 import './App.css';
+import './App.styl';
 import Navbar from './components/Navbar';
 import Contents from './components/Content';
 
@@ -17,7 +18,7 @@ const App = () => (
           <Navbar />
         </HashRouter>
       </Header>
-      <Content style={{ padding: '0 50px' }}>
+      <Content style={{ padding: '0 50px', overflow: 'auto' }}>
         <Contents />
       </Content>
       <Footer style={{ textAlign: 'center' }}>SYSUCC ©2020 Created by Yu Sun</Footer>

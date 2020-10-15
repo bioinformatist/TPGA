@@ -1,7 +1,7 @@
 const airbnb = require('@neutrinojs/airbnb');
 const react = require('@neutrinojs/react');
 const jest = require('@neutrinojs/jest');
-const web = require('@neutrinojs/web');
+const styles = require('@neutrinojs/style-loader');
 
 module.exports = {
   options: {
@@ -14,29 +14,16 @@ module.exports = {
       html: {
         title: 'TPGA'
       },
+      // https://github.com/neutrinojs/neutrino/issues/1561#issuecomment-640060434
       styles: ({
-        // Override the default file extension of `.css` if needed
         test: /\.css$/,
-        modulesTest: /\.module.css$/,
+        modulesTest: /\.module\.css$/,
         loaders: [
-          // Define loaders as objects. Note: loaders must be specified in reverse order.
-          // ie: for the loaders below the actual execution order would be:
-          // input file -> sass-loader -> postcss-loader -> css-loader -> style-loader/mini-css-extract-plugin
           {
             loader: 'postcss-loader',
             options: {
               plugins: [require('autoprefixer')],
             },
-          },
-        ],
-      },
-      {
-        test: /\styl$/,
-        modulesTest: /\.module.styl$/,
-        loaders: [
-          {
-            loader: 'stylus-loader',
-            useId: 'stylus',
           },
         ],
       }),
@@ -48,6 +35,17 @@ module.exports = {
           },
         },
       },
+    }),
+    styles({
+      ruleId: 'style-stylus',
+      loaders: [
+        {
+          loader: 'stylus-loader',
+          useId: 'stylus',
+        },
+      ],
+      test: /\.(styl)$/,
+      modulesTest: /\.module.(styl)$/,
     }),
     jest(),
   ],
