@@ -13,3 +13,6 @@ __pycache__/
 
 # Tables
 tables/
+
+# ES lint cache
+.eslintcache
