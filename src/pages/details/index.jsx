@@ -5,6 +5,7 @@ import GeneBasicInfo from '../../components/GeneBasicInfo';
 import BoxPlot from '../../components/BoxPlot';
 import Corr from '../../components/Corr';
 import Kegg from '../../components/Kegg';
+import DatasetInfo from '../../components/DatasetInfo';
 import './index.styl';
 
 export default function Details(props) {
@@ -17,6 +18,7 @@ export default function Details(props) {
 
   const g = group.split(':').filter((f) => f.includes('GPL') || f.includes('GSE'));
   const gName = g.length === 2 ? g.join('_') : g[0];
+  const gse = group.match(/(GSE.+?):/)[1];
 
   return (
     <Modal
@@ -42,6 +44,9 @@ export default function Details(props) {
       <Kegg
         gene={gene}
         group={gName}
+      />
+      <DatasetInfo
+        gse={gse}
       />
     </Modal>
   );

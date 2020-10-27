@@ -4,7 +4,7 @@ import SimpleLazyTable from '../../components/SimpleLazyTable';
 export default function Gwas() {
   return (
     <>
-      <h1>GWAS</h1>
+      <h2>GWAS</h2>
       <SimpleLazyTable
         table="gwas"
       />

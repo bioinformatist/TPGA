@@ -43,7 +43,7 @@ export default function Corr(props) {
         layout: 'force',
 
         force: {
-          edgeLength: 50,
+          edgeLength: 200,
           repulsion: 50,
           gravity: 0.2,
         },
@@ -87,17 +87,19 @@ export default function Corr(props) {
           setData(result);
         },
       );
-
-    renderChart();
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gene, group]);
+
+  useEffect(() => {
+    renderChart()
   }, [data]);
 
-  useEffect(() => () => {
-    if (chartInstance) {
-      chartInstance.dispose();
+  useEffect(() => {
+    return () => {
+      chartInstance && chartInstance.dispose()
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   // const chart = isLoaded ? (
   //   <div ref={chartRef} style={{ width: '100%', height: '500%' }} />
@@ -109,7 +111,7 @@ export default function Corr(props) {
     // <>
     //   { chart }
     // </>
-    <div ref={chartRef} style={{ width: '100%', height: '500%' }} />
+    <div ref={chartRef} style={{ width: '100%', height: '888%' }} />
   );
 }
 

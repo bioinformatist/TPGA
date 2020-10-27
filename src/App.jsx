@@ -11,9 +11,11 @@ const { Header, Content, Footer } = Layout;
 
 const App = () => (
   <>
+    <h1>
+      TPGA
+    </h1>
     <Layout className="layout">
       <Header>
-        <div className="logo" />
         <HashRouter>
           <Navbar />
         </HashRouter>

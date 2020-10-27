@@ -131,7 +131,7 @@ export default function SimpleLazyTable(props) {
               col.title = col.dataIndex;
               col.onCell = () => ({
                 style: {
-                  color: 'white',
+                  color: 'black',
                 },
               });
               if (c.dataIndex === 'Gene' || c.dataIndex === 'Disease') {

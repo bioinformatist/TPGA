@@ -3,8 +3,8 @@ import { Link, useHistory } from 'react-router-dom';
 import {
   Card, Button, Row, Col, Input,
 } from 'antd';
+import Plot from 'react-plotly.js';
 import './index.styl';
-import searchImg from './pic.png';
 
 const { Search } = Input;
 
@@ -13,14 +13,8 @@ export default function Home() {
 
   return (
     <>
-      <h1 className="home">
-        <span>T</span>
-        <span>P</span>
-        <span>G</span>
-        <span>A</span>
-      </h1>
-      <Row justify="space-around">
-        <Col span={10}>
+      <Row justify="center" align="middle">
+        <Col span={5}>
           <Card style={{ width: '60%', margin: '3% auto', border: 'none' }}>
             <p>Welcome to TPGA!</p>
             <p>
@@ -60,8 +54,83 @@ export default function Home() {
             <Button><Link to="/expression">Get started</Link></Button>
           </div>
         </Col>
-        <Col span={14}>
-          <div><img width="auto" src={searchImg} alt="" /></div>
+        <Col span={19}>
+          <Row justify="center" align="middle">
+            <Col span={12}>
+              <Plot
+                data={[
+                  {
+                    values: [38, 550, 578, 95],
+                    labels: ['Homo sapiens', 'Mus musculus', 'Rattus norvegicus', 'Sus scrofa'],
+                    type: 'pie',
+                  },
+                ]}
+                layout={{
+                  title: 'Species',
+                  width: 'auto',
+                  height: 'auto',
+                  paper_bgcolor: '#F9F9EC',
+                  plot_bgcolor: '#F9F9EC',
+                }}
+              />
+            </Col>
+            <Col span={12}>
+              <Plot
+                data={[
+                  {
+                    values: [684, 455, 122],
+                    labels: ['Expression profiling by array', 'Expression profiling by high throughput sequencing', 'Methylation profiling by high throughput sequencing'],
+                    type: 'pie',
+                  },
+                ]}
+                layout={{
+                  title: 'Data Source',
+                  width: 'auto',
+                  height: 'auto',
+                  paper_bgcolor: '#F9F9EC',
+                  plot_bgcolor: '#F9F9EC',
+                }}
+              />
+            </Col>
+          </Row>
+          <Row justify="center" align="middle">
+            <Col span={12}>
+              <Plot
+                data={[
+                  {
+                    values: [16, 18, 137, 832, 15, 9, 210, 11, 13],
+                    labels: ['Bladder', 'Blood', 'Brain', 'Dorsal root ganglion', 'Sciatic nerve', 'Skin', 'Spinal cord', 'Trigeminal ganglion', 'Urine sediment'],
+                    type: 'pie',
+                  },
+                ]}
+                layout={{
+                  title: 'Tissue Type',
+                  width: 'auto',
+                  height: 'auto',
+                  paper_bgcolor: '#F9F9EC',
+                  plot_bgcolor: '#F9F9EC',
+                }}
+              />
+            </Col>
+            <Col span={12}>
+              <Plot
+                data={[
+                  {
+                    values: [6, 605, 143, 458, 25, 24],
+                    labels: ['Chronic', 'Control', 'Drug', 'Injury', 'Other disease', 'Physical'],
+                    type: 'pie',
+                  },
+                ]}
+                layout={{
+                  title: 'Pain Type',
+                  width: 'auto',
+                  height: 'auto',
+                  paper_bgcolor: '#F9F9EC',
+                  plot_bgcolor: '#F9F9EC',
+                }}
+              />
+            </Col>
+          </Row>
           <Search
             placeholder="Search Gene"
             enterButton="Quick Search!"

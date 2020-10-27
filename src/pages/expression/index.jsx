@@ -8,7 +8,7 @@ const { TabPane } = Tabs;
 export default function Expression() {
   return (
     <div>
-      <h1 className="expression">Expression</h1>
+      <h2 className="expression">Expression</h2>
       <Tabs defaultActiveKey="1">
         <TabPane tab="Acute" key="1">
           <LazyTable

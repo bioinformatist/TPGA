@@ -177,7 +177,7 @@ export default function LazyTable(props) {
                 style: {
                   background: v2bgColor(record[r.join(':')]),
                   cursor: 'pointer',
-                  color: !Number.isNaN(record[r.join(':')]) && Math.abs(Number(record[r.join(':')])) < 0.5 ? 'black' : 'white',
+                  color: !Number.isNaN(record[r.join(':')]) && Math.abs(Number(record[r.join(':')])) > 0.5 ? 'white' : 'black',
                 },
                 onClick: (() => setAll({
                   newGene: record.Gene,
@@ -198,7 +198,7 @@ export default function LazyTable(props) {
                 style: {
                   background: v2bgColor(record[r.join(':')]),
                   cursor: 'pointer',
-                  color: !Number.isNaN(record[r.join(':')]) && Math.abs(Number(record[r.join(':')])) < 0.5 ? 'black' : 'white',
+                  color: !Number.isNaN(record[r.join(':')]) && Math.abs(Number(record[r.join(':')])) > 0.5 ? 'white' : 'black',
                 },
                 onClick: (() => setAll({
                   newGene: record.Gene,
@@ -229,7 +229,7 @@ export default function LazyTable(props) {
         width: 100,
         onCell: () => ({
           style: {
-            color: 'white',
+            color: 'black',
           },
         }),
       };

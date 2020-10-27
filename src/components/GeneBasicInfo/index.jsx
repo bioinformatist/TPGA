@@ -13,7 +13,7 @@ export default function GeneBasicInfo(props) {
 
   const onCell = () => ({
     style: {
-      color: 'white',
+      color: 'black',
     },
   });
 

@@ -53,8 +53,8 @@ export default function BoxPlot(props) {
     );
   } else {
     plot = (
-      <Row>
-        <Col span={17}>
+      <Row justify="center" align="middle">
+        <Col span={12}>
           <Plot
             data={[
               {
@@ -63,6 +63,9 @@ export default function BoxPlot(props) {
                 name: 'Control',
                 boxpoints: 'all',
                 jitter: 0.5,
+                marker: {
+                  color: '#b1d3e0',
+                },
               },
               {
                 y: y1,
@@ -70,37 +73,40 @@ export default function BoxPlot(props) {
                 name: gn,
                 boxpoints: 'all',
                 jitter: 0.5,
+                marker: {
+                  color: '#659b28',
+                },
               },
             ]}
             layout={{
               width: 'auto',
               height: 'auto',
-              xaxis: {
-                tickfont: {
-                  color: 'white',
-                },
-              },
+              // xaxis: {
+              //   tickfont: {
+              //     color: '#e0ffea',
+              //   },
+              // },
               yaxis: {
                 autorange: true,
                 showgrid: true,
                 zeroline: true,
                 dtick: 5,
-                gridcolor: 'white',
+                // gridcolor: '#e0ffea',
                 gridwidth: 1,
-                zerolinecolor: 'white',
+                // zerolinecolor: '#e0ffea',
                 zerolinewidth: 2,
               },
-              paper_bgcolor: 'black',
-              plot_bgcolor: 'black',
-              font: {
-                color: 'white',
-              },
+              paper_bgcolor: '#F9F9EC',
+              plot_bgcolor: '#F9F9EC',
+              // font: {
+              //   color: '#e0ffea',
+              // },
               showlegend: false,
             }}
           />
         </Col>
-        <Col span={7}>
-          <Card title="Metrics" style={{ width: 'auto', margin: '3% auto' }}>
+        <Col span={12}>
+          <Card title="Metrics" style={{ width: '50%', margin: '3% auto', float: 'left'}}>
             <p>
               P-value:
               {p}

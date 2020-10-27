@@ -72,7 +72,7 @@ export default function KeggPlot(props) {
               size,
               sizeref: (2.0 * Math.max(...size)) / (desiredMaximumMarkerSize ** 2),
               sizemode: 'area',
-              color: 'rgb(255, 153, 0)',
+              color: '#659b28',
             },
           },
         ]}
@@ -84,29 +84,29 @@ export default function KeggPlot(props) {
             title: {
               text: 'KEGG Pathway',
             },
-            tickfont: {
-              color: 'white',
-            },
+            // tickfont: {
+            //   color: '#e0ffea',
+            // },
           },
           yaxis: {
-            color: 'white',
-            tickfont: {
-              color: 'white',
-            },
-            autorange: true,
+            // color: 'black',
+            // tickfont: {
+            //   color: 'black',
+            // },
+            // autorange: true,
             showgrid: true,
             zeroline: true,
             // dtick: 5,
-            gridcolor: 'white',
+            // gridcolor: '#e0ffea',
             gridwidth: 1,
-            zerolinecolor: 'white',
+            // zerolinecolor: '#e0ffea',
             zerolinewidth: 2,
           },
-          paper_bgcolor: 'black',
-          plot_bgcolor: 'black',
-          font: {
-            color: 'white',
-          },
+          paper_bgcolor: '#F9F9EC',
+          plot_bgcolor: '#F9F9EC',
+          // font: {
+          //   color: 'black',
+          // },
           showlegend: false,
         }}
       />
